@@ -27,9 +27,9 @@ max(max(abs(inv(R4.mat)-R4.mat')))>10^(-3)]
 
 %% Part B
 
-gamma = @(Rx) atan2(Rx(2,1),Rx(1,1));   % about z yaw
-beta = @(Rx) atan2(-Rx(3,1),sqrt(Rx(3,2)^2+Rx(3,3)^2));  % about y pitch
-alpha = @(Rx) atan2(Rx(3,2),Rx(3,3));  % about x roll
+gamma = @(Rx) atan(Rx(2,1)/Rx(1,1));   % about z y
+beta = @(Rx) atan(-Rx(3,1)/sqrt(Rx(3,2)^2+Rx(3,3)^2));
+alpha = @(Rx) atan(Rx(3,2)/Rx(3,3));  % about x roll
 
 N4.mat = -R4.mat;
 name = ['R1';'R2';'R3';'R4';'N4'];
