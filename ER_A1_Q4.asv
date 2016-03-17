@@ -1,0 +1,14 @@
+%% L Drabsch 18/3/16
+% Experimental robotics Assignment 1 Question 4
+% Modified DH
+% Aero coordinate convention
+close all
+%% transformations
+% DHmod = Rot(z,theta)*trans(z,d)*rot(x,alpha)*trans(x,a)
+Base = createT(0,0,0,zeros(3,1));
+A0_1 = DHmod(0,0,0,90);
+figure
+hold on
+fig4.coord = hggroup;
+plotcoord(
+plotcoord(A0_1,'m',fig4.coord)
